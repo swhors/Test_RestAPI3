@@ -6,4 +6,4 @@ ADD api.py /root
 
 WORKDIR /root
 
-ENTRYPOINT ["python", "api.py"]
+CMD ["python", "api.py"]
