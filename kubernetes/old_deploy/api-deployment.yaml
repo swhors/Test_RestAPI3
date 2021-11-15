@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-testapi
+  labels:
+    prod_tag: testapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      node_tag: testapi
+  template:
+    metadata:
+      name: testapi-pod
+      labels:
+        node_tag: testapi
+    spec:
+      containers:
+        - name: prod-testapi
+          image: 192.168.0.16:5000/testapi:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5001

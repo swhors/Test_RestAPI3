@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prod-testapi
+  labels:
+    node_tag: testapi
+spec:
+  type: ClusterIP
+  selector:
+    node_tag: testapi
+    color: green
+  ports:
+    - name: prod-testapi
+      port: 5001
+      protocol: TCP
+      nodePort: 30600
+      targetPort: 5001
