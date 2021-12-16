@@ -18,6 +18,8 @@ spec:
       containers:
         - name: prod-testapi
           image: resttestapp3acr.azurecr.io/testresrapi3:4ba88ca2f35a83c248af28eed0f808d8896a6cf7
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5001
+      imagePullSecrets:
+        - name: testrestapi03
