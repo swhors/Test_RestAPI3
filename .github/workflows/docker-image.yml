@@ -20,5 +20,5 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build . -f docker/Dockerfile -t mycontainer.azurecr.io/testresrapi3:${{ github.sha }}
-        docker push mycontainer.azurecr.io/testresrapi3:${{ github.sha }}  
+        docker build . -f docker/Dockerfile -t resttestapp3acr.azurecr.io/testresrapi3:${{ github.sha }}
+        docker push resttestapp3acr.azurecr.io/testresrapi3:${{ github.sha }}  
